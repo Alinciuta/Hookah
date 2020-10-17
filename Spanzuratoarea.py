@@ -14,7 +14,6 @@ def play(cuvant):
     status_cuvant2[0] = cuvant[0]
     status_cuvant2[-1] = cuvant[-1]
     status_cuvant = status_cuvant.join(status_cuvant2)
-
     cuvant_listat = list(status_cuvant)
     indices = [i for i, letter in enumerate(cuvant) if letter == cuvant[0]]
     for index in indices:
@@ -25,13 +24,12 @@ def play(cuvant):
     for index in indices:
         cuvant_listat[index] = cuvant[-1]
     status_cuvant = "".join(cuvant_listat)
-
     ghicit = False
     litere_ok = [cuvant[0]]
     cuvinte_ok = []
     incercari = 7
     print('Sa incepem jocul! Ai 7 incercari pentru a ghici cuvantul')
-    print(display_hangman(incercari))
+    print(joc(incercari))
     print(status_cuvant)
     while not ghicit and incercari > 0:
         incearca = input("Introdu o litera: ")
@@ -52,19 +50,9 @@ def play(cuvant):
                 status_cuvant = "".join(cuvant_listat)
                 if "_" not in status_cuvant:
                     ghicit = True
-        # elif len(incearca) == len(cuvant) and incearca.isalpha():
-        #     if incearca in cuvinte_ok:
-        #         print("Deja ai ghicit cuvantul", incearca)
-        #     elif incearca != cuvant:
-        #         print(incearca, "Nu este cuvantul tau.")
-        #         incercari -= 1
-        #         cuvinte_ok.append(incearca)
-        #     else:
-        #         ghicit = True
-        #         status_cuvant = cuvant
         else:
             print("Incercarea nu este valida.")
-        print(display_hangman(incercari))
+        print(joc(incercari))
         print(status_cuvant)
     if ghicit:
         print("Felicitari! Ai ghicit cuvantul!")
@@ -72,8 +60,8 @@ def play(cuvant):
         print("GRESIT! Cuvantul tau a fost" + cuvant + ". Mai mult noroc data viitoare!")
 
 
-def display_hangman(incercari):
-    stages = [  # final state: head, torso, both arms, and both legs
+def joc(incercari):
+    stages = [
         """
            --------
            |      |
@@ -82,7 +70,7 @@ def display_hangman(incercari):
            |      |
            |     / \\
         """,
-        # head, torso, both arms, and one leg
+
         """
            --------
            |      |
@@ -91,7 +79,6 @@ def display_hangman(incercari):
            |      |
            |     / 
         """,
-        # head, torso, and both arms
         """
            --------
            |      |
@@ -100,7 +87,6 @@ def display_hangman(incercari):
            |      |
            |      
         """,
-        # head, torso, and one arm
         """
            --------
            |      |
@@ -109,7 +95,6 @@ def display_hangman(incercari):
            |      |
            |     
         """,
-        # head and torso
         """
            --------
            |      |
@@ -118,7 +103,6 @@ def display_hangman(incercari):
            |      |
            |     
         """,
-        # head
         """
            --------
            |      |
@@ -127,7 +111,6 @@ def display_hangman(incercari):
            |      
            |     
         """,
-        # initial empty state
         """
            --------
            |      |
@@ -136,8 +119,7 @@ def display_hangman(incercari):
            |      
            |     
         """,
-
-                """
+        """
         - -------
         | 
         |
