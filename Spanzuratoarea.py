@@ -11,7 +11,7 @@ def play(cuvant):
     status_cuvant1 = '_' * len(cuvant)
     status_cuvant = ""
     status_cuvant2 = list(status_cuvant1)
-    status_cuvant2[0] = cuvant[0]
+    status_cuvant2[0] = cuvant[0] #schimb pentru prima si ultima litera
     status_cuvant2[-1] = cuvant[-1]
     status_cuvant = status_cuvant.join(status_cuvant2)
     cuvant_listat = list(status_cuvant)
