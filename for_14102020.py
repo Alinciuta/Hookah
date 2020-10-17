@@ -1,3 +1,4 @@
+# Curst 14 octombrie
 # lista = [1, 2, 3, 4]
 # for index, value in enumerate(lista):
 #     print(index, '=>', value)
