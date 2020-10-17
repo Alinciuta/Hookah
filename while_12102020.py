@@ -59,3 +59,4 @@ while numar != 0:
         impar+= 1
     numar = int(input('Scrie numerele: '))
 print('Numerele pare: {} si nr impare {}'.format(par, impar))
+#12 octombrie
