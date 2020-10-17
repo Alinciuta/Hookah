@@ -20,7 +20,7 @@ else:
 
 telefon = str(input('Introdu numarul de telefon:\t'))
 tada = [int(i) for i in str(telefon)]
-if telefon.isdigit() == False and len(telefon) == 10 and tada[0] == 0:
+if telefon.isdigit() == True and len(telefon) == 10 and tada[0] == 0:
     print('Numarul este valid')
 else:
     print('Numarul introdus nu exista')
