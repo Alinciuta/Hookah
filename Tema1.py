@@ -60,7 +60,6 @@ else:
     final_cod = [cod[i] * control[i] for i in range(len(cod))]
     adunare = sum(final_cod)
     rezultat = adunare / 11
-    #rezultat = round(rezultat, 2)
     rest = str(rezultat)
     numar_control = rest[1:]
     k = float(numar_control)

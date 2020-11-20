@@ -11,7 +11,7 @@ def play(cuvant):
     status_cuvant1 = '_' * len(cuvant)
     status_cuvant = ""
     status_cuvant2 = list(status_cuvant1)
-    status_cuvant2[0] = cuvant[0] #schimb pentru prima si ultima litera
+    status_cuvant2[0] = cuvant[0]
     status_cuvant2[-1] = cuvant[-1]
     status_cuvant = status_cuvant.join(status_cuvant2)
     cuvant_listat = list(status_cuvant)
@@ -25,8 +25,7 @@ def play(cuvant):
         cuvant_listat[index] = cuvant[-1]
     status_cuvant = "".join(cuvant_listat)
     ghicit = False
-    litere_ok = [cuvant[0]]
-    cuvinte_ok = []
+    litere_ok = [cuvant[0], cuvant[-1]]
     incercari = 7
     print('Sa incepem jocul! Ai 7 incercari pentru a ghici cuvantul')
     print(joc(incercari))
@@ -127,7 +126,7 @@ def joc(incercari):
         |
         |
         """
-]
+    ]
     return stages[incercari]
 
 
