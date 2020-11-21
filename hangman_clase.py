@@ -75,6 +75,7 @@ class Spanzuratoarea:
         self.cuvant = self.get_word()
         self.play()
         while input("Vrei sa joci din nou? (Y / N) ").upper() == "Y":
+            self.incercari = 7
             self.cuvant = self.get_word()
             self.play()
 

@@ -12,7 +12,6 @@ class Joc:
             (2, 4, 6))
         self.nr_mutari = 0
 
-
     def tabla_joc(self):
         print()
         print(self.tabla[0], self.tabla[1], self.tabla[2])
@@ -82,8 +81,12 @@ class Joc:
         self.tabla_joc()
         self.set_joc()
 
+    def reset(self):
+        for i in range(8):
+            self.tabla[i] = i
 
     def joaca_din_nou(self):
+        self.reset()
         while True:
             ask = input("Vrei sa joci din nou?  Y or N \n")
             if ask == 'Y':
