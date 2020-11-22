@@ -7,7 +7,7 @@ def get_word():
     return cuvant
 
 
-def play(cuvant):
+def play(cuvant: str) -> str:
     status_cuvant1 = '_' * len(cuvant)
     status_cuvant = ""
     status_cuvant2 = list(status_cuvant1)
@@ -59,7 +59,7 @@ def play(cuvant):
         print("GRESIT! Cuvantul tau a fost" + cuvant + ". Mai mult noroc data viitoare!")
 
 
-def joc(incercari):
+def joc(incercari: int) -> int:
     stages = [
         """
            --------
@@ -130,7 +130,7 @@ def joc(incercari):
     return stages[incercari]
 
 
-def main():
+def main() -> bool:
     cuvant = get_word()
     play(cuvant)
     while input("Vrei sa joci din nou? (Y / N) ").upper() == "Y":
@@ -140,4 +140,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    

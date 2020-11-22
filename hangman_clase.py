@@ -16,9 +16,11 @@ class Spanzuratoarea:
         self.litere_ok = []
         self.ghicit = None
 
-    def get_word(self):
+    def get_word(self: str) -> str:
         self.cuvant = random.choice(word_list)
         return self.cuvant
+    """
+    :return: se alege cuvantul"""
 
     def play(self):
         self.status_cuvant1 = "_" * len(self.cuvant)
@@ -70,7 +72,7 @@ class Spanzuratoarea:
         else:
             print("GRESIT! Cuvantul tau a fost: " + self.cuvant + ". Mai mult noroc data viitoare!")
 
-    def main(self):
+    def main(self: bool) -> bool:
         self.__init__()
         self.cuvant = self.get_word()
         self.play()
