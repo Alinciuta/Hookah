@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <br>
+    <br>
+    <a href="{% url 'aplicatie3:adaugare' %}" class="header_style">Adaugare</a>
+    <table id="id_tabel">
+        <thead class="header_style">
+        <th>Counter</th>
+        <th>Type</th>
+        <th>URL</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>HowToApply</th>
+        <th>Company</th>
+        <th>Actions</th>
+        </thead>
+        <tbody>
+        {% for item in all_jobs %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ item.type }}</td>
+                <td>{{ item.url }}</td>
+                <td>{{ item.title }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.how_to_apply }}</td>
+                <td>{{ item.company.name }}</td>
+                <td><a href="{% url 'aplicatie3:modificare' item.id %}">Edit</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
